@@ -91,14 +91,21 @@ print("Greatest Decrease in Profits: " + str(Greatest_Decrease_Date) + "(" + str
 
 # # Export a text file with the results.
 
-# # Specify the file to write to
-# output_path = os.path.join("..", "output", "new.csv")
+# Specify the file to write to
+output_path = os.path.join('new.csv')
 
-# # Open the file using "write" mode. Specify the variable to hold the contents
-# with open(output_path, 'w', newline='') as csvfile:
+# Open the file using "write" mode. Specify the variable to hold the contents
+with open(output_path, 'w', newline='') as newcsvfile:
 
-#     # Initialize csv.writer
-#     csvwriter = csv.writer(csvfile, delimiter=',')
+    # Initialize csv.writer
+    csvwriter = csv.writer(newcsvfile, delimiter=',')
 
-#     # Write the first row (column headers)
-#     csvwriter.writerow(['First Name', 'Last Name', 'SSN'])
+    # Write the first row
+    csvwriter.writerow(['Financial', 'Analysis'])
+
+    # Write the nex rows
+    csvwriter.writerow(['Total Months', str(Total_Months)])
+    csvwriter.writerow(['Total', str(Total)])
+    csvwriter.writerow(['Average Change', str(Average_Change)])
+    csvwriter.writerow(['Greatest Increase in Profits', str(Greatest_Increase_Date) + "(" + str(Greatest_Increase_Amount) + ")"])
+    csvwriter.writerow(['Greatest Decrease in Profits', str(Greatest_Decrease_Date) + "(" + str(Greatest_Decrease_Amount) + ")"])
